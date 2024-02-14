@@ -1,12 +1,14 @@
 import React from "react";
+import _ from "lodash";
+import "./TodoApp.css";
 import { useTodoContext } from "./TodoContext";
 
-const TableFooter = () => {
-  const { onAllClicked, onActiveClicked, onCompletedClicked, onDelete } =
-    useTodoContext;
+const TodoFooter = () => {
+  const { items, onActiveClicked, onAllClicked, onCompletedClicked, onDelete } =
+    useTodoContext();
   return (
     <div>
-      {/* {value}items left! */}
+      {_.size(_.filter(items, (item) => !item.completed))} items left!
       <button onClick={onAllClicked}>All</button>
       <button onClick={onActiveClicked}>Active</button>
       <button onClick={onCompletedClicked}>Completed</button>
@@ -15,4 +17,4 @@ const TableFooter = () => {
   );
 };
 
-export default TableFooter;
+export default TodoFooter;

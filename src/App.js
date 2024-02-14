@@ -6,10 +6,10 @@ import { TodoProvider } from "./TodoContext";
 function App() {
   return (
     <div className="App">
-      {/* <TodoProvider>
+      <div>Todos</div>
+      <TodoProvider>
         <TodoApp />
-      </TodoProvider> */}
-      <Todo />
+      </TodoProvider>
     </div>
   );
 }
